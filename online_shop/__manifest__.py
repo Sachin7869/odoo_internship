@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'sample_module',
+    'name': 'online_shop',
     'version': '18.0.0.0',
     'summary': 'madre mia',
     'description': """ This Module  is for training purposes.
@@ -29,16 +29,9 @@
     'author': 'Sachin T',
     'website': 'www.zbeanztech.com',
     "license": "LGPL-3",
-    'depends': ['base','sale','sale_management','account','contacts','product'],
+    'depends': ['base',],
     'data': [
-                'security/security.xml',
-                'security/ir.model.access.csv',
-                'data/sequence.xml',
-                'views/car_rental_view.xml',
-                'views/food_view.xml',
-                'views/model_one_view.xml',
-                'views/model_one_lines.xml',
-                'views/menu.xml',
+                
 				
         ],
     'test': [],
