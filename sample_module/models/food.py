@@ -20,11 +20,15 @@ class Food(models.Model):
     blog = fields.Html(string="blog")
     sale_order_id = fields.Many2one('sale.order', string="Sale Order")
     invoice_id = fields.Many2one('account.move', string="Related Invoice")
-
+    date_of_birth = fields.Date(string="Date of Birth")
+    age = fields.Integer(string="Age", compute="_compute_age")
     sale_created = fields.Boolean(string="Sale Order Created")
+	# def default_get(self, fields_list):
+	# 	res = super(Food, self).default_get(fields_list)
+	# 	res['is_satisfied'] = True
+	# 	return res
 
-    
-    
+   
     def create_invoice(self):
         pass
     def create_contacts(self):
@@ -92,6 +96,7 @@ class Food(models.Model):
     def delet_the_rec(self):
         food_browse = self.env['food.food'].browse(self.id)
         food_browse.unlink()
+
     
     @api.model
     def default_get(self, fields_list):
